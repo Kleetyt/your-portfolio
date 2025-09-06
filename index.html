@@ -11,8 +11,8 @@
   <header class="header">
     <img src="https://yt3.googleusercontent.com/WLOSeRz_sDq4mpawh54XaNE9vyjomLx9AcEUUwd9fdgLc6dOgRJEPdB2RfqNFefu_r8vTqTmAvo=s160-c-k-c0x00ffffff-no-rj" alt="Profile Picture" class="profile-pic">
     <h1 id="typing-text" class="fade-in"></h1>
-    <p id="typing-subtitle" class="fade-in"></p>
-    <p id="typing-email" class="fade-in"></p>
+    <p class="fade-in">I build bots, websites, and more.</p>
+    <p class="fade-in">Email: <a href="mailto:kleetplaysyt99@gmail.com">kleetplaysyt99@gmail.com</a></p>
   </header>
 
   <!-- Projects -->
@@ -61,35 +61,22 @@
   <!-- Typing Effect Script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const lines = [
-        { text: "Hello, I'm Kleet", id: "typing-text" },
-        { text: "I build bots, websites, and more.", id: "typing-subtitle" },
-        { text: "Email: kleetplaysyt99@gmail.com", id: "typing-email" }
-      ];
-
-      let lineIndex = 0;
-      let charIndex = 0;
+      const text = "Hello, I'm Kleet";
+      const target = document.getElementById("typing-text");
+      let i = 0;
 
       function type() {
-        if (lineIndex < lines.length) {
-          const { text, id } = lines[lineIndex];
-          const target = document.getElementById(id);
-
-          if (charIndex < text.length) {
-            target.textContent += text.charAt(charIndex);
-            target.classList.add("typing-cursor");
-            charIndex++;
-            setTimeout(type, 80); // typing speed
-          } else {
-            target.classList.remove("typing-cursor");
-            lineIndex++;
-            charIndex = 0;
-            setTimeout(type, 500); // pause before next line
-          }
+        if (i < text.length) {
+          target.textContent += text.charAt(i);
+          target.classList.add("typing-cursor");
+          i++;
+          setTimeout(type, 80); // typing speed
+        } else {
+          target.classList.remove("typing-cursor");
         }
       }
 
-      setTimeout(type, 800); // start after fade-in
+      setTimeout(type, 800); // start typing after fade-in
     });
   </script>
 </body>

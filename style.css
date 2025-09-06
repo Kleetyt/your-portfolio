@@ -130,6 +130,7 @@ footer {
 }
 .typing-cursor::after {
   content: "|";
+  color: #00aaff; /* Match theme */
   animation: blink 0.7s infinite;
 }
 
@@ -148,4 +149,32 @@ footer {
 @keyframes growBar {
   from { width: 0; }
   to { width: 100%; }
+}
+
+/* -----------------
+   📱 Mobile Styles
+------------------- */
+@media (max-width: 768px) {
+  .project-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-card {
+    width: 90%; /* stretch nicely on mobile */
+  }
+  .skills .skill {
+    width: 90%;
+  }
+  .header {
+    padding: 1.5rem 1rem;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+  footer {
+    font-size: 0.8rem;
+  }
 }

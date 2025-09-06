@@ -5,14 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kleet's Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://yt3.googleusercontent.com/WLOSeRz_sDq4mpawh54XaNE9vyjomLx9AcEUUwd9fdgLc6dOgRJEPdB2RfqNFefu_r8vTqTmAvo=s160-c-k-c0x00ffffff-no-rj">
 </head>
 <body>
   <!-- Header -->
   <header class="header">
     <img src="https://yt3.googleusercontent.com/WLOSeRz_sDq4mpawh54XaNE9vyjomLx9AcEUUwd9fdgLc6dOgRJEPdB2RfqNFefu_r8vTqTmAvo=s160-c-k-c0x00ffffff-no-rj" alt="Profile Picture" class="profile-pic">
     <h1 id="typing-text" class="fade-in"></h1>
-    <p class="fade-in">I build bots, websites, and more.</p>
-    <p class="fade-in">Email: <a href="mailto:kleetplaysyt99@gmail.com">kleetplaysyt99@gmail.com</a></p>
+    <p>I build bots, websites, and more.</p>
+    <p>Email: <a href="mailto:kleetplaysyt99@gmail.com">kleetplaysyt99@gmail.com</a></p>
   </header>
 
   <!-- Projects -->
@@ -58,7 +60,7 @@
     <p>© 2025 Kleet</p>
   </footer>
 
-  <!-- Typing Effect Script -->
+  <!-- Typing effect script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const text = "Hello, I'm Kleet";
@@ -70,13 +72,14 @@
           target.textContent += text.charAt(i);
           target.classList.add("typing-cursor");
           i++;
-          setTimeout(type, 80); // typing speed
+          setTimeout(type, 100); // typing speed
         } else {
-          target.classList.remove("typing-cursor");
+          target.classList.remove("typing-cursor"); // remove cursor after typing
         }
       }
 
-      setTimeout(type, 800); // start typing after fade-in
+      // Delay typing until fade-in starts
+      setTimeout(type, 800); 
     });
   </script>
 </body>

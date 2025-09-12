@@ -9,6 +9,12 @@
   <link rel="icon" type="image/png" href="rounded.png">
 </head>
 <body>
+  <!-- Announcement Bar -->
+  <div class="announcement" id="announcement">
+    <span>🚀 Mobile version launced!</span>
+    <button class="close-btn" id="close-announcement">&times;</button>
+  </div>
+
   <!-- Header -->
   <header class="header">
     <img src="https://yt3.googleusercontent.com/WLOSeRz_sDq4mpawh54XaNE9vyjomLx9AcEUUwd9fdgLc6dOgRJEPdB2RfqNFefu_r8vTqTmAvo=s160-c-k-c0x00ffffff-no-rj" alt="Profile Picture" class="profile-pic">
@@ -27,7 +33,7 @@
       </div>
       <div class="project-card">
         <h3>This Website</h3>
-        <p>This is the website your on!</p>
+        <p>This is the website you're on!</p>
       </div>
       <div class="project-card">
         <h3>Your Idea</h3>
@@ -46,7 +52,7 @@
   <!-- About Me -->
   <section class="about">
     <h2>About Me</h2>
-    <p>I'm Kleet, a 14-year-old developer passionate about making useful and fun tools. Since age 7, I’ve been exploring coding, creating bots, games, and all sorts of websites that people can enjoy every day. I run Cenoryx Security and the very website your on right now!</p>
+    <p>I'm Kleet, a 14-year-old developer passionate about making useful and fun tools. Since age 7, I’ve been exploring coding, creating bots, games, and all sorts of websites that people can enjoy every day. I run Cenoryx Security and the very website you're on right now!</p>
   </section>
 
   <!-- Contact -->
@@ -60,9 +66,10 @@
     <p>© 2025 Kleet</p>
   </footer>
 
-  <!-- Typing effect script -->
+  <!-- Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Typing effect
       const text = "Hello, I'm Kleet";
       const target = document.getElementById("typing-text");
       let i = 0;
@@ -74,12 +81,19 @@
           i++;
           setTimeout(type, 100); // typing speed
         } else {
-          target.classList.remove("typing-cursor"); // remove cursor after typing
+          target.classList.remove("typing-cursor");
         }
       }
+      setTimeout(type, 800);
 
-      // Delay typing until fade-in starts
-      setTimeout(type, 800); 
+      // Announcement close
+      const closeBtn = document.getElementById("close-announcement");
+      const announcement = document.getElementById("announcement");
+      closeBtn.addEventListener("click", () => {
+        announcement.style.transition = "opacity 0.5s";
+        announcement.style.opacity = "0";
+        setTimeout(() => announcement.remove(), 500);
+      });
     });
   </script>
 </body>

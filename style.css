@@ -13,6 +13,43 @@ body {
   color: #00aaff;
 }
 
+/* Navbar */
+.navbar {
+  background: #111827;
+  border-bottom: 1px solid #222;
+  padding: 0.8rem;
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.navbar a:hover {
+  color: #00aaff;
+}
+.navbar .active {
+  color: #00aaff;
+  border-bottom: 2px solid #00aaff;
+  padding-bottom: 2px;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
 /* Header */
 .header {
   padding: 2rem;
@@ -110,6 +147,33 @@ h2::after {
 }
 .about:hover, .contact:hover {
   background: #1a2435;
+}
+
+/* Newsletter */
+.newsletter {
+  padding: 2rem;
+}
+.news-item {
+  background: #1f2937;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+.news-item .date {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+.news-item h3 {
+  margin: 0.5rem 0 0.2rem;
+  color: #00aaff;
+}
+.news-item h4 {
+  margin: 0 0 0.5rem;
+  color: #ccc;
+}
+.news-item p {
+  line-height: 1.5;
 }
 
 /* Footer */

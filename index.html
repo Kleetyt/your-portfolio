@@ -73,18 +73,7 @@
   <main id="newsletter" class="tab-content">
     <section class="newsletter">
       <h2>Newsletter</h2>
-      <div class="news-item">
-        <span class="date">Sept 26, 2025</span>
-        <h3>Launched My Portfolio</h3>
-        <h4>First Step</h4>
-        <p>This is the first entry in my newsletter! I’ll use this tab to post updates about my projects, tools, and new releases.</p>
-      </div>
-      <div class="news-item">
-        <span class="date">Sept 20, 2025</span>
-        <h3>Started Revolution Bot</h3>
-        <h4>Project Announcement</h4>
-        <p>Revolution is my verified ER:LC management bot. I’m excited to grow and release more updates for it soon.</p>
-      </div>
+      <div id="news-container"></div>
     </section>
   </main>
 
@@ -125,6 +114,31 @@
         }
       }
       setTimeout(type, 800);
+
+      // Load Newsletter from JSON
+      fetch("newsletter.json")
+        .then(response => response.json())
+        .then(data => {
+          const container = document.getElementById("news-container");
+
+          // Sort newest first
+          data.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          data.forEach(item => {
+            const div = document.createElement("div");
+            div.classList.add("news-item");
+            div.innerHTML = `
+              <span class="date">${item.date}</span>
+              <h3>${item.title}</h3>
+              <h4>${item.subtitle}</h4>
+              <p>${item.description}</p>
+            `;
+            container.appendChild(div);
+          });
+        })
+        .catch(err => {
+          console.error("Failed to load newsletter:", err);
+        });
     });
   </script>
 </body>

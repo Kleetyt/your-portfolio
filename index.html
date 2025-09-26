@@ -5,65 +5,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kleet's Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Favicon -->
   <link rel="icon" type="image/png" href="rounded.png">
 </head>
 <body>
 
-  <!-- Background Music -->
-  <audio id="bg-music" autoplay loop>
-    <source src="poster boy.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#" class="tab-link active" data-tab="home">Home</a></li>
+      <li><a href="#" class="tab-link" data-tab="newsletter">Newsletter</a></li>
+    </ul>
+  </nav>
 
-  <!-- Header -->
-  <header class="header">
-    <img src="https://yt3.googleusercontent.com/WLOSeRz_sDq4mpawh54XaNE9vyjomLx9AcEUUwd9fdgLc6dOgRJEPdB2RfqNFefu_r8vTqTmAvo=s160-c-k-c0x00ffffff-no-rj" alt="Profile Picture" class="profile-pic">
-    <h1 id="typing-text" class="fade-in"></h1>
-    <p>I build bots, websites, and more.</p>
-    <p>Email: <a href="mailto:kleet@kleetdev.com">kleet@kleetdev.com</a></p>
-  </header>
+  <!-- Home Content -->
+  <main id="home" class="tab-content active">
+    <!-- Header -->
+    <header class="header">
+      <img src="https://yt3.googleusercontent.com/WLOSeRz_sDq4mpawh54XaNE9vyjomLx9AcEUUwd9fdgLc6dOgRJEPdB2RfqNFefu_r8vTqTmAvo=s160-c-k-c0x00ffffff-no-rj" alt="Profile Picture" class="profile-pic">
+      <h1 id="typing-text" class="fade-in"></h1>
+      <p>I build bots, websites, and more.</p>
+      <p>Email: <a href="mailto:kleet@kleetdev.com">kleet@kleetdev.com</a></p>
+    </header>
 
-  <!-- Projects -->
-  <section class="projects">
-    <h2>My Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Revolution</h3>
-        <p>Revolution is a verified ER:LC management bot.</p>
+    <!-- Projects -->
+    <section class="projects">
+      <h2>My Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Revolution</h3>
+          <p>Revolution is a verified ER:LC management bot.</p>
+        </div>
+        <div class="project-card">
+          <h3>This Website</h3>
+          <p>This is the website you're on!</p>
+        </div>
+        <div class="project-card">
+          <h3>Programmer</h3>
+          <p>I am a programmer with 4 years of programming.</p>
+        </div>
       </div>
-      <div class="project-card">
-        <h3>This Website</h3>
-        <p>This is the website you're on!</p>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills">
+      <h2>Skills</h2>
+      <div class="skill"><p>Python</p><div class="bar"><div style="width: 75%"></div></div></div>
+      <div class="skill"><p>HTML</p><div class="bar"><div style="width: 95%"></div></div></div>
+      <div class="skill"><p>CSS</p><div class="bar"><div style="width: 95%"></div></div></div>
+      <div class="skill"><p>Javascript</p><div class="bar"><div style="width: 95%"></div></div></div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+      <h2>About Me</h2>
+      <p>I'm Kleet, a 14-year-old developer passionate about making useful and fun tools. Since age 7, I’ve been exploring coding, creating bots, games, and all sorts of websites that people can enjoy every day. I run Cenoryx Security and the very website you're on right now!</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>Discord: @kleetyt</p>
+      <p>Email: <a href="mailto:kleet@kleetdev.com">kleet@kleetdev.com</a></p>
+    </section>
+  </main>
+
+  <!-- Newsletter Content -->
+  <main id="newsletter" class="tab-content">
+    <section class="newsletter">
+      <h2>Newsletter</h2>
+      <div class="news-item">
+        <span class="date">Sept 26, 2025</span>
+        <h3>Launched My Portfolio</h3>
+        <h4>First Step</h4>
+        <p>This is the first entry in my newsletter! I’ll use this tab to post updates about my projects, tools, and new releases.</p>
       </div>
-      <div class="project-card">
-        <h3>Programmer</h3>
-        <p>I am a programmer with 4 years of programming.</p>
+      <div class="news-item">
+        <span class="date">Sept 20, 2025</span>
+        <h3>Started Revolution Bot</h3>
+        <h4>Project Announcement</h4>
+        <p>Revolution is my verified ER:LC management bot. I’m excited to grow and release more updates for it soon.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section class="skills">
-    <h2>Skills</h2>
-    <div class="skill"><p>Python</p><div class="bar"><div style="width: 75%"></div></div></div>
-    <div class="skill"><p>HTML</p><div class="bar"><div style="width: 95%"></div></div></div>
-    <div class="skill"><p>CSS</p><div class="bar"><div style="width: 95%"></div></div></div>
-    <div class="skill"><p>Javascript</p><div class="bar"><div style="width: 95%"></div></div></div>
-  </section>
-
-  <!-- About Me -->
-  <section class="about">
-    <h2>About Me</h2>
-    <p>I'm Kleet, a 14-year-old developer passionate about making useful and fun tools. Since age 7, I’ve been exploring coding, creating bots, games, and all sorts of websites that people can enjoy every day. I run Cenoryx Security and the very website you're on right now!</p>
-  </section>
-
-  <!-- Contact -->
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Discord: @kleetyt</p>
-    <p>Email: <a href="mailto:kleet@kleetdev.com">kleet@kleetdev.com</a></p>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <p>© 2025 Kleet</p>
@@ -72,37 +95,36 @@
   <!-- Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Tab switching
+      const links = document.querySelectorAll(".tab-link");
+      const tabs = document.querySelectorAll(".tab-content");
+
+      links.forEach(link => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          links.forEach(l => l.classList.remove("active"));
+          link.classList.add("active");
+
+          tabs.forEach(tab => tab.classList.remove("active"));
+          document.getElementById(link.dataset.tab).classList.add("active");
+        });
+      });
+
       // Typing effect
       const text = "Hello, I'm Kleet";
       const target = document.getElementById("typing-text");
       let i = 0;
-
       function type() {
         if (i < text.length) {
           target.textContent += text.charAt(i);
           target.classList.add("typing-cursor");
           i++;
-          setTimeout(type, 100); // typing speed
+          setTimeout(type, 100);
         } else {
           target.classList.remove("typing-cursor");
         }
       }
       setTimeout(type, 800);
-
-      // Background music autoplay fix
-      const music = document.getElementById("bg-music");
-
-      // Try play immediately
-      music.play().catch(() => {
-        // If blocked, wait for first click/tap
-        const resumeMusic = () => {
-          music.play();
-          document.removeEventListener("click", resumeMusic);
-          document.removeEventListener("touchstart", resumeMusic);
-        };
-        document.addEventListener("click", resumeMusic);
-        document.addEventListener("touchstart", resumeMusic);
-      });
     });
   </script>
 </body>

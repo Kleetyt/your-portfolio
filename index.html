@@ -15,11 +15,11 @@
       <li><a href="#" class="tab-link active" data-tab="home">Home</a></li>
       <li><a href="#" class="tab-link" data-tab="newsletter">Newsletter</a></li>
     </ul>
+    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">🌙</button>
   </nav>
 
   <!-- Home Content -->
   <main id="home" class="tab-content active">
-    <!-- Header -->
     <header class="header">
       <img src="https://yt3.googleusercontent.com/WLOSeRz_sDq4mpawh54XaNE9vyjomLx9AcEUUwd9fdgLc6dOgRJEPdB2RfqNFefu_r8vTqTmAvo=s160-c-k-c0x00ffffff-no-rj" alt="Profile Picture" class="profile-pic">
       <h1 id="typing-text" class="fade-in"></h1>
@@ -27,7 +27,6 @@
       <p>Email: <a href="mailto:kleet@kleetdev.com">kleet@kleetdev.com</a></p>
     </header>
 
-    <!-- Projects -->
     <section class="projects">
       <h2>My Projects</h2>
       <div class="project-grid">
@@ -36,8 +35,8 @@
           <p>Raspberry Pi is my new found love.</p>
         </div>
         <div class="project-card">
-          <h3>This Website</h3>
-          <p>This is the website you're on!</p>
+          <h3>Tizzly Systems</h3>
+          <p>This is my latest project i've been working on and i need a team!</p>
         </div>
         <div class="project-card">
           <h3>Programmer</h3>
@@ -46,22 +45,19 @@
       </div>
     </section>
 
-    <!-- Skills -->
     <section class="skills">
       <h2>Skills</h2>
-      <div class="skill"><p>Python</p><div class="bar"><div style="width: 75%"></div></div></div>
-      <div class="skill"><p>HTML</p><div class="bar"><div style="width: 95%"></div></div></div>
-      <div class="skill"><p>CSS</p><div class="bar"><div style="width: 95%"></div></div></div>
-      <div class="skill"><p>Javascript</p><div class="bar"><div style="width: 95%"></div></div></div>
+      <div class="skill"><p>Python</p><div class="bar"><div style="width: 35%"></div></div></div>
+      <div class="skill"><p>HTML</p><div class="bar"><div style="width: 25%"></div></div></div>
+      <div class="skill"><p>CSS</p><div class="bar"><div style="width: 15%"></div></div></div>
+      <div class="skill"><p>Javascript</p><div class="bar"><div style="width: 25%"></div></div></div>
     </section>
 
-    <!-- About -->
     <section class="about">
       <h2>About Me</h2>
       <p>I'm Kleet, a 14-year-old developer passionate about making useful and fun tools. Since age 7, I’ve been exploring coding, creating bots, games, and all sorts of websites that people can enjoy every day. I run Cenoryx Security and the very website you're on right now!</p>
     </section>
 
-    <!-- Contact -->
     <section class="contact">
       <h2>Contact</h2>
       <p>Discord: @kleetyt</p>
@@ -81,7 +77,6 @@
     <p>© 2025 Kleet</p>
   </footer>
 
-  <!-- Scripts -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       // Tab switching
@@ -89,11 +84,10 @@
       const tabs = document.querySelectorAll(".tab-content");
 
       links.forEach(link => {
-        link.addEventListener("click", (e) => {
+        link.addEventListener("click", e => {
           e.preventDefault();
           links.forEach(l => l.classList.remove("active"));
           link.classList.add("active");
-
           tabs.forEach(tab => tab.classList.remove("active"));
           document.getElementById(link.dataset.tab).classList.add("active");
         });
@@ -109,36 +103,43 @@
           target.classList.add("typing-cursor");
           i++;
           setTimeout(type, 100);
-        } else {
-          target.classList.remove("typing-cursor");
-        }
+        } else target.classList.remove("typing-cursor");
       }
       setTimeout(type, 800);
 
-      // Load Newsletter from JSON
+      // Theme Toggle
+      const toggleBtn = document.getElementById("theme-toggle");
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light") document.body.classList.add("light-mode");
+
+      toggleBtn.textContent = document.body.classList.contains("light-mode") ? "🌙" : "☀️";
+
+      toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
+        const isLight = document.body.classList.contains("light-mode");
+        toggleBtn.textContent = isLight ? "🌙" : "☀️";
+        localStorage.setItem("theme", isLight ? "light" : "dark");
+      });
+
+      // Load Newsletter JSON
       fetch("newsletter.json")
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
           const container = document.getElementById("news-container");
-
-          // Sort newest first
           data.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-          data.forEach(item => {
+          data.forEach((item, index) => {
             const div = document.createElement("div");
             div.classList.add("news-item");
             div.innerHTML = `
               <span class="date">${item.date}</span>
-              <h3>${item.title}</h3>
+              <h3>${item.title} ${index === 0 ? "<span class='new-badge'>NEW</span>" : ""}</h3>
               <h4>${item.subtitle}</h4>
               <p>${item.description}</p>
             `;
             container.appendChild(div);
           });
         })
-        .catch(err => {
-          console.error("Failed to load newsletter:", err);
-        });
+        .catch(err => console.error("Failed to load newsletter:", err));
     });
   </script>
 </body>

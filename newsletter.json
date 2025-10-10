@@ -1,17 +1,23 @@
 [
+    {
+    "date": "Oct 10, 2025",
+    "title": "Updated My Website",
+    "subtitle": "I am adding more features to my website!",
+    "description": "I will be posting updates about my projects, tools, and new releases"
+    },
   {
     "date": "Sept 27, 2025",
     "title": "Raspberry Pi Radio Module",
     "subtitle": "I have developed the first official pi-local-radio on github (https://github.com/Kleetyt/pi-local-radio)",
     "description": "The setup is very easy you just have to clone the repository and if you need help setting it up on your pi just email or DM me!"
   },
-    {
+  {
     "date": "Sept 26, 2025",
     "title": "Added This Tab",
     "subtitle": "Give me feedback for this!",
     "description": "This is the first entry in my newsletter! I’ll use this tab to post updates about my projects, tools, and new releases."
   },
-    {
+  {
     "date": "Sept 22, 2025",
     "title": "Got My 1st Raspberry Pi",
     "subtitle": "The model is a pi 4 model B",

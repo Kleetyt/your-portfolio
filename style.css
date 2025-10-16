@@ -62,14 +62,23 @@ body {
   animation: fadeIn 1s ease-in-out;
 }
 .profile-pic {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   border: 3px solid #00aaff;
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.5);
   margin-bottom: 1rem;
-  transition: transform 0.3s ease;
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.profile-pic:hover { transform: scale(1.1) rotate(3deg); }
+.profile-pic:hover {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 0 0 35px rgba(0, 170, 255, 0.8);
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
 /* Sections */
 section {

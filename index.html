@@ -36,7 +36,7 @@
         </div>
         <div class="project-card">
           <h3>Tizzly Systems</h3>
-          <p>This is my latest project i've been working on and i need a team!</p>
+          <p>This is my latest project I've been working on and I need a team!</p>
         </div>
         <div class="project-card">
           <h3>Programmer</h3>
@@ -55,7 +55,7 @@
 
     <section class="about">
       <h2>About Me</h2>
-      <p>I'm Kleet, a 14-year-old developer passionate about making useful and fun tools. Since age 7, I’ve been exploring coding, creating bots, games, and all sorts of websites that people can enjoy every day. I run Cenoryx Security and the very website you're on right now!</p>
+      <p>I'm Kleet, a 14-year-old developer passionate about making useful and fun tools. Since age 7, I’ve been exploring coding, creating bots, games, and websites that people can enjoy every day. I run Cenoryx Security and the very website you're on right now!</p>
     </section>
 
     <section class="contact">
@@ -100,10 +100,9 @@
       function type() {
         if (i < text.length) {
           target.textContent += text.charAt(i);
-          target.classList.add("typing-cursor");
           i++;
           setTimeout(type, 100);
-        } else target.classList.remove("typing-cursor");
+        }
       }
       setTimeout(type, 800);
 
